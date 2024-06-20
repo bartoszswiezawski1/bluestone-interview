@@ -21,3 +21,4 @@ ${ID_COLUMN_HEADER}                 //*[local-name()='div' and @aria-label='ID']
 ${FIRST_NAME_COLUMN_HEADER}         //*[local-name()='div' and @aria-label='First name']
 ${LAST_NAME_COLUMN_HEADER}          //*[local-name()='div' and @aria-label='Last name']
 ${AGE_COLUMN_HEADER}                //*[local-name()='div' and @aria-label='Age']
+${GRID_FOOTER}                      class:MuiDataGrid-selectedRowCount

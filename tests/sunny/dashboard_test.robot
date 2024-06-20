@@ -55,6 +55,10 @@ Sort desc by age
     Click Element    ${AGE_COLUMN_HEADER}
     Element Text Should Be    ${DATA_0_3}    150
 
+Select row
+    Click Element    ${DATA_0_0}
+    Element Text Should Be    ${GRID_FOOTER}    1 row selected
+
 Switch light mode
     Element Attribute Value Should Be    ${HTML}    style    color-scheme: light;
     Click Element    ${MODE_BUTTON}
