@@ -15,7 +15,6 @@ Log in successfully
     Visual check    dashboard.png
 
 Switch light mode
-    Wait Until Element Is Visible    ${MODE_BUTTON}
     Visual check    login.png
     Element Attribute Value Should Be    ${HTML}    style    color-scheme: light;
     Click Element    ${MODE_BUTTON}
