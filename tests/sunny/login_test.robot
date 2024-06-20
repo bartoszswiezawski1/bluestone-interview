@@ -1,6 +1,6 @@
 *** Settings ***
 Resource            ../../resources/common.resource
-Resource            ../../resources/constants.resource
+Resource            ../../resources/config.resource
 Resource            ../../resources/selectors.resource
 
 Test Setup          Browser setup

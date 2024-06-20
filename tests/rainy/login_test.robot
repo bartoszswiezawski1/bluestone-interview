@@ -1,7 +1,7 @@
 *** Settings ***
 Library             SeleniumLibrary
 Resource            ../../resources/common.resource
-Resource            ../../resources/constants.resource
+Resource            ../../resources/config.resource
 Resource            ../../resources/selectors.resource
 
 Suite Setup         Browser setup

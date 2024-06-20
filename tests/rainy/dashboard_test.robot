@@ -1,6 +1,6 @@
 *** Settings ***
 Library             SeleniumLibrary
-Resource            ../../resources/constants.resource
+Resource            ../../resources/config.resource
 Resource            ../../resources/selectors.resource
 Resource            ../../resources/common.resource
 
