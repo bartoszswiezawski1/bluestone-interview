@@ -3,6 +3,7 @@ Library             SeleniumLibrary
 Resource            ../../resources/common.resource
 Resource            ../../resources/config.resource
 Resource            ../../resources/selectors.resource
+Resource            ../../resources/page_login.robot
 
 Suite Setup         Browser setup
 Suite Teardown      Browser close
@@ -11,67 +12,67 @@ Test Teardown       Reload Page
 
 *** Test Cases ***
 Get error for login without email and password
-    Click Button    ${LOGIN_BUTTON}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Email is not valid
 
 Get error for login without email
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
+    Input password    ${PASSWORD}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Email is not valid
 
 Get error for login with invalid email format
-    Input Text    ${EMAIL_INPUT}    invalid@email
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    invalid@email
+    Input password    ${PASSWORD}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Email is not valid
 
 Get error for login with blank email
-    Input Text    ${EMAIL_INPUT}    ${EMPTY}
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    ${EMPTY}
+    Input password    ${PASSWORD}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Email is not valid
 
 Get error for login with white space email
-    Input Text    ${EMAIL_INPUT}    ${SPACE}
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    ${SPACE}
+    Input password    ${PASSWORD}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Email is not valid
 
 Get error for login with invalid email
-    Input Text    ${EMAIL_INPUT}    invalid@email.com
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    invalid@email.com
+    Input password    ${PASSWORD}
+    Click login button
     Wait Until Element Is Visible    ${INVALID_CREDENTIALS_ERRROR}
     Element Text Should Be    ${INVALID_CREDENTIALS_ERRROR}    Invalid email or password
 
 Get error for login without password
-    Input Text    ${EMAIL_INPUT}    ${EMAIL}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    ${EMAIL}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Please enter your password
 
 Get error for login with blank password
-    Input Text    ${EMAIL_INPUT}    ${EMAIL}
-    Input Text    ${PASSWORD_INPUT}    ${EMPTY}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    ${EMAIL}
+    Input password    ${EMPTY}
+    Click login button
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Please enter your password
 
 Get error for login with white space password
-    Input Text    ${EMAIL_INPUT}    ${EMAIL}
-    Input Text    ${PASSWORD_INPUT}    ${SPACE}
-    Click Button    ${LOGIN_BUTTON}
+    Input username    ${EMAIL}
+    Input password    ${SPACE}
+    Click login button
     Wait Until Element Is Visible    ${INVALID_CREDENTIALS_ERRROR}
     Element Text Should Be    ${INVALID_CREDENTIALS_ERRROR}    Invalid email or password
 
 Get error for login with invalid password
-    Input Text    ${EMAIL_INPUT}    ${EMAIL}
-    Input Text    ${PASSWORD_INPUT}    invalid
-    Click Button    ${LOGIN_BUTTON}
+    Input username    ${EMAIL}
+    Input password    invalid
+    Click login button
     Wait Until Element Is Visible    ${INVALID_CREDENTIALS_ERRROR}
     Element Text Should Be    ${INVALID_CREDENTIALS_ERRROR}    Invalid email or password

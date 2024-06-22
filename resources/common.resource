@@ -10,12 +10,6 @@ Browser setup
     Open Browser    url=${URL}    browser=${BROWSER}
     Set Window Size    ${WIDTH}    ${HEIGHT}
 
-Log in
-    Input Text    ${EMAIL_INPUT}    ${EMAIL}
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
-    Wait Until Element Is Visible    ${DATA_0_0}
-
 Visual check
     [Arguments]    ${file_name}
     Sleep    50ms
@@ -30,9 +24,8 @@ Visual check
     ...    resize_candidate=True
     ...    threshold=${threshold}
 
+Click light mode button
+    Click Element    ${MODE_BUTTON}
+
 Browser close
     Close Browser
-
-Logged in user
-    Browser setup
-    Log in
