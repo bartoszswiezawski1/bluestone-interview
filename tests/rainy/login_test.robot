@@ -28,6 +28,20 @@ Get error for login with invalid email format
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Email is not valid
 
+Get error for login with blank email
+    Input Text    ${EMAIL_INPUT}    ${EMPTY}
+    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
+    Click Button    ${LOGIN_BUTTON}
+    Wait Until Element Is Visible    ${INPUT_ERROR}
+    Element Text Should Be    ${INPUT_ERROR}    Email is not valid
+
+Get error for login with white space email
+    Input Text    ${EMAIL_INPUT}    ${SPACE}
+    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
+    Click Button    ${LOGIN_BUTTON}
+    Wait Until Element Is Visible    ${INPUT_ERROR}
+    Element Text Should Be    ${INPUT_ERROR}    Email is not valid
+
 Get error for login with invalid email
     Input Text    ${EMAIL_INPUT}    invalid@email.com
     Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
@@ -40,6 +54,20 @@ Get error for login without password
     Click Button    ${LOGIN_BUTTON}
     Wait Until Element Is Visible    ${INPUT_ERROR}
     Element Text Should Be    ${INPUT_ERROR}    Please enter your password
+
+Get error for login with blank password
+    Input Text    ${EMAIL_INPUT}    ${EMAIL}
+    Input Text    ${PASSWORD_INPUT}    ${EMPTY}
+    Click Button    ${LOGIN_BUTTON}
+    Wait Until Element Is Visible    ${INPUT_ERROR}
+    Element Text Should Be    ${INPUT_ERROR}    Please enter your password
+
+Get error for login with white space password
+    Input Text    ${EMAIL_INPUT}    ${EMAIL}
+    Input Text    ${PASSWORD_INPUT}    ${SPACE}
+    Click Button    ${LOGIN_BUTTON}
+    Wait Until Element Is Visible    ${INVALID_CREDENTIALS_ERRROR}
+    Element Text Should Be    ${INVALID_CREDENTIALS_ERRROR}    Invalid email or password
 
 Get error for login with invalid password
     Input Text    ${EMAIL_INPUT}    ${EMAIL}
